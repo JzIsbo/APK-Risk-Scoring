@@ -19,24 +19,15 @@ return [
 
     'allowed_methods' => ['*'],
 
-    // In production, set FRONTEND_URL env var to your Vercel domain
-    // e.g. https://your-app.vercel.app
-    'allowed_origins' => array_filter([
-        'http://localhost:5173',   // Vite dev server
-        'http://localhost:3000',   // Alternative dev
-        env('FRONTEND_URL'),       // Production Vercel URL
-    ]),
+    'allowed_origins' => ['*'],
 
-    'allowed_origins_patterns' => [
-        // Allow all Vercel preview deployments automatically
-        '#^https://.*\.vercel\.app$#',
-    ],
+    'allowed_origins_patterns' => [],
 
     'allowed_headers' => ['*'],
 
-    'exposed_headers' => ['Content-Disposition'],
+    'exposed_headers' => [],
 
-    'max_age' => 86400,
+    'max_age' => 0,
 
     'supports_credentials' => false,
 
