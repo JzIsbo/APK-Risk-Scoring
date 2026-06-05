@@ -24,11 +24,4 @@ $app = Application::configure(basePath: dirname(__DIR__))
         });
     })->create();
 
-// Vercel serverless: redirect writable paths ke /tmp
-// (/tmp adalah satu-satunya writable directory di Vercel)
-if (isset($_SERVER['VERCEL']) || getenv('VERCEL')) {
-    $app->useStoragePath('/tmp/storage');
-    $app->useEnvironmentPath(dirname(__DIR__));
-}
-
 return $app;
